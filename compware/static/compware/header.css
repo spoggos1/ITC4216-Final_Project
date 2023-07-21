@@ -1,0 +1,95 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header { /*css code to lock element header's proper position (position:sticky), as well as properly space its contents from the border, and improve its appearance (text-align and background-color*/
+  position: sticky;
+  top: 0;
+  background-color: rgba(52, 185, 185, 0.678);
+  padding: 20px;
+  text-align: center;
+  z-index: 100;
+}
+#home { /*css code to position the "home" button properly at the middle of the bottom part of the page, and style its appearance with "border", "background-color*/
+position: fixed;
+bottom: 1%;
+right: 45%;
+border: solid black;
+padding: 5px;
+background-color: lightblue;
+}
+
+.header .logo { /*adjust the width and height of the header and logo elements, display:inline-block necessary for the width and height adjustment, aligned vertically and in the middle*/
+display: inline-block;
+vertical-align: left;
+position: relative;
+left: -7%;
+}
+
+.header .title {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  position: relative;
+  left: -30%;
+}
+
+.header .menu {
+  display: inline-block;
+}
+
+.header .menu a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+a.About:hover,
+a.Index:hover,
+a.register:hover,
+a.login:hover,
+a.profile:hover,
+a.logout:hover,
+a.admin:hover {
+color: red; /* We Set the color red when hovering over the link */
+}
+
+.About, .Index, .register, .login, .profile, .logout, .admin {
+border-bottom: solid black;
+}
+.admin{
+  position: relative;
+  left: -25%;
+}
+.logout{
+  position: relative;
+  left: 37%;
+}
+.register{
+  position: relative;
+  left: 50%;
+}
+
+.login{
+  position: relative;
+  left: 20%;
+}
+
+.profile{
+  position: relative;
+  left: 70%;
+}
+
+#aboutlink{
+  position: relative;
+  left: -50%;
+}
+
+thead, tbody { /*code that affects the thead and tbody elements, adjusting their size/color etc.*/
+  background-color: azure;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
