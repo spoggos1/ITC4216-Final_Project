@@ -1,7 +1,7 @@
 {% extends "compware/layout.html" %}
 {% load static %}
 {% block body %}
-    <title> Compware Index</title>
+    <title> Hardware </title>
     
     <div class="header"> <!--container (div) named "header" will be used to hold all information that we want to appear as the sticky header of our webpage-->
         <img class="logo" src="{% static '/images/compware.png' %}" height = "150px" width = "200px">
@@ -9,9 +9,6 @@
         <nav class="menu">
           <a href="#" id="home"><b>Home</b></a> <!--home button exists bottom and right, just above the end of the page-->
           <a href="/compware/about" id="aboutlink" class="About">About Compware</a>
-          {% if user.is_superuser %}
-          <a href="/admin" class="admin"> Administrators Area </a>
-          {% endif %}
           <a href="/compware" class="Index">Index</a>
           <a href="/login" class="login">Login</a>
           <a href="/logout" class="logout"> Logout</a>
@@ -22,6 +19,11 @@
       <br></br>
       
       <br></br>
+      {% if user.is_superuser %}
+
+          <p> Administrators-only Area: Please click  <a href="/admin" class="admin"> here </a> to view and edit the website.</p> 
+          <br></br>
+          {% endif %}
       {% if user.is_authenticated %}
       <p> Thank you for choosing Compware, <b> {{user.username}}</b>! Feel free to browse our store by category or subcategory, found in the menu underneath. <br></br> Alternatively, you can use the search function. </p>
       <h3>Menu</h3>

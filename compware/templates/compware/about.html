@@ -1,9 +1,23 @@
 {% extends "compware/layout.html" %}
 {% load static %}
-
-
 {% block body %}
-
-<title> About Compware</title>
+    <title> About Compware</title>
+    
+    <div class="header"> <!--container (div) named "header" will be used to hold all information that we want to appear as the sticky header of our webpage-->
+        <img class="logo" src="{% static '/images/compware.png' %}" height = "150px" width = "200px">
+        <h1 class="title" >Compware</h1>
+        <nav class="menu">
+          <a href="#" id="home"><b>Home</b></a> <!--home button exists bottom and right, just above the end of the page-->
+          <a href="/compware/about" id="aboutlink" class="About">About Compware</a>
+          <a href="/compware" class="Index">Index</a>
+          <a href="/login" class="login">Login</a>
+          <a href="/logout" class="logout"> Logout</a>
+          <a href="/register" class="register">Register</a>
+          <a href="#" class="profile">Profile</a>
+        </nav>
+      </div>
+      <br></br>
+      <h1 style="text-align:center">About Compware!</h1>
+      <br></br>
 
 {% endblock %}

@@ -30,7 +30,7 @@ background-color: lightblue;
 display: inline-block;
 vertical-align: left;
 position: relative;
-left: -7%;
+left: -10%;
 }
 
 .header .title {
@@ -38,7 +38,7 @@ left: -7%;
   vertical-align: middle;
   font-weight: bold;
   position: relative;
-  left: -30%;
+  left: -33%;
 }
 
 .header .menu {
@@ -64,13 +64,13 @@ color: red; /* We Set the color red when hovering over the link */
 .About, .Index, .register, .login, .profile, .logout, .admin {
 border-bottom: solid black;
 }
-.admin{
+.Index{
   position: relative;
-  left: -25%;
+  left: -20%;
 }
 .logout{
   position: relative;
-  left: 37%;
+  left: 35%;
 }
 .register{
   position: relative;
@@ -84,7 +84,7 @@ border-bottom: solid black;
 
 .profile{
   position: relative;
-  left: -35%;
+  left: -50%;
 }
 
 #aboutlink{

@@ -89,14 +89,17 @@ def antivirus(request):
 
 def search(request):
     query = request.GET.get('q')
-    context = {}
+    results = ''
+    context = { 'query' : results}
     try:
         query = str(query)
     except ValueError:
         query = None
         results = None
+    
     if query:
-        results = Item.objects.filter(item_name=query)
+        results = Item.objects.filter(item_name__icontains=query) or Item.objects.filter(item_price__icontains=query)
+        
     context.update({'results': results})
     return render(request, 'compware/results.html', context)
 
