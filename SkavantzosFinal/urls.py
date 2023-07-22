@@ -17,16 +17,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from register import views as vr
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from compware import views as cv
 
 urlpatterns = [
     path('compware/', include('compware.urls')),
     path('admin/', admin.site.urls),
     path('register/', vr.register, name ="register"),
     path('', include("django.contrib.auth.urls")),
+    path('hardware/', cv.hardware, name ="hardware"),
+    path('software/', cv.software, name ="software"),
+    path('computingcomponents/', cv.computingcomponents, name ="computingcomponents"),
+    path('networkingcomponents/', cv.networkingcomponents, name ="networkingcomponents"),
+    path('peripherals/', cv.peripherals, name ="peripherals"),
+    path('antivirus/', cv.antivirus, name ="antivirus"),
+    path('utilitysoftware/', cv.utilitysoftware, name ="utilitysoftware"),
+    path('operatingsystem/', cv.operatingsystem, name ="operatingsystem"),
+    path('search/', cv.search, name='search'),
 ] 
 
 if settings.DEBUG:

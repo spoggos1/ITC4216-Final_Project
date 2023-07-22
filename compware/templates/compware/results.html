@@ -20,10 +20,10 @@
         </nav>
       </div>
       <br></br>
-      <h1 style="text-align:center">Welcome to Compware!</h1>
+      
       <br></br>
       {% if user.is_authenticated %}
-      <p> Thank you for choosing Compware, <b> {{user.username}}</b>! Feel free to browse our store by category or subcategory, found in the menu underneath. <br></br> Alternatively, you can use the search function. </p>
+      
       <h3>Menu</h3>
       <p>Browse our store by category or subcategory.</p>
       
@@ -41,12 +41,12 @@
         <a href="/antivirus">Antivirus</a>
 
       </div>
-    </div>
+    </div>    
+    <br></br>
+    <br></br>
+{% endif %}
     
-    <br></br>
-    <br></br>
-     {% endif %}
-     <h3 class="text-center"> Search Engine</h3>
+    <h3 class="text-center"> Search Again?</h3>
     <br></br>
     <form method="get" action="/search/" id="srcheader">
       {% csrf_token %}
@@ -54,34 +54,34 @@
       <input type="submit" value="Submit" />
     </form>
 
-    {% if user.is_authenticated %}
     <div class="container pt-4">
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <th class="text-center">Item Name</th>
-                    <th class="text-center">Item Price</th>
-                    <th class="text-center">Item Category</th>
-                    <th class="text-center">Item Subcategory</th>
-                    <th class="'text-center"> Item Image</th>
+      <div class="table-responsive">
+          <table class="table table-bordered">
+              <thead>
+                  <th class="text-center">Item Name</th>
+                  <th class="text-center">Item Price</th>
+                  <th class="text-center">Item Category</th>
+                  <th class="text-center">Item Subcategory</th>
+                  <th class="'text-center"> Item Image</th>
+                </tr>
+              </thead>
+              <tr>
+                {% for result in results %}
+                  <tr>
+                      <tbody>
+                          <td class="text-center">{{ result.item_name }}</td>
+                          <td class="text-center">{{ result.item_price }} &euro;</td>
+                          <td class="text-center">{{ result.item_category }}</td>
+                          <td class="text-center">{{ result.item_subcat }}</td>
+                          <td class="'text-center"><img src="{{ result.item_image.url }}" width="120" height="120" alt="image"></td>
+                      </tbody>
+                    
                   </tr>
-                </thead>
-                <tr>
-                  {% for item in Item %}
-                    <tr>
-                        <tbody>
-                            <td class="text-center">{{ item.item_name }}</td>
-                            <td class="text-center">{{ item.item_price }} &euro;</td>
-                            <td class="text-center">{{ item.item_category }}</td>
-                            <td class="text-center">{{ item.item_subcat }}</td>
-                            <td class="'text-center"><img src="{{ item.item_image.url }}" width="120" height="120" alt="image"></td>
-                        </tbody>
-                      
-                    </tr>
-                  {% endfor %}
-            </table>
-        </div>
-    </div>
-    {% endif %}
+                {% endfor %}
+          </table>
+      </div>
+  </div>
+  
+   
 
 {% endblock %}
